@@ -1,0 +1,67 @@
+LoginInterface:
+
+<LoginInterface>
+
+    MDBottomNavigation:
+        MDBottomNavigationItem:
+            name: 'screen1'
+            text: 'signup'
+            icon: 'account'
+
+            MDTopAppBar:
+                title: 'singup screen'
+                pos_hint: {'top': 1}
+                right_action_items: [['weather-sunny', lambda x: app.color_changer()]]
+            MDBoxLayout:
+                orientation: 'vertical'
+                size_hint: .8, .2
+                pos_hint: {'center_x': .5, 'top': .7}
+                MDTextField:
+                    id: username
+                    hint_text: 'Username'
+                MDTextField:
+                    id: signup_email
+                    hint_text: 'Email'
+
+                MDTextField:
+                    id: signup_password
+                    hint_text: 'Password'
+                    text_color: 0,0,0,1
+
+            MDBoxLayout:
+                size_hint_x: .2
+                size_hint_y: None
+                height: dp(40)
+                pos_hint: {'right': .9, 'top': .5}
+                MDRaisedButton:
+                    text: 'signup'
+                    on_release: root.creator()
+
+        MDBottomNavigationItem:
+            name: 'screen2'
+            text: 'Login'
+            icon: 'login'
+            MDTopAppBar:
+                title: 'Login Screen'
+                pos_hint: {'top': 1}
+
+            MDBoxLayout:
+                orientation: 'vertical'
+                size_hint: .8, .2
+                pos_hint: {'center_x': .5, 'top': .7}
+                MDTextField:
+                    id: login_email
+                    hint_text: 'Email'
+
+                MDTextField:
+                    id: login_password
+                    hint_text: 'Password'
+
+            MDBoxLayout:
+                size_hint_x: .2
+                size_hint_y: None
+                height: dp(40)
+                pos_hint: {'right': .9, 'top': .5}
+                MDRaisedButton:
+                    text: 'Login'
+                    on_release: root.login()
